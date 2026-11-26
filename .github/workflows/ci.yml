@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake git python3 libssl-dev
+      - name: Reproduce (measurements re-run into scratch, digests verified)
+        run: bash reproduce.sh
+      - name: Excerpt check against the pinned postfiatd checkout
+        run: |
+          git clone https://github.com/postfiatorg/postfiatd.git /tmp/postfiatd-pin
+          git -C /tmp/postfiatd-pin checkout 0085a1ff885d6a446369cf73a4430f75af22be55
+          python3 scripts/check_excerpts.py --pin /tmp/postfiatd-pin
