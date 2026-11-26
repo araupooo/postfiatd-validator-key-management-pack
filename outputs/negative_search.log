@@ -1,0 +1,55 @@
+=== negative searches over the pinned postfiatd tree ===
+checkout: /home/hatch/workspace/postfiatd-pin-0085a1f
+checkout HEAD: 0085a1ff885d6a446369cf73a4430f75af22be55
+expected pin: 0085a1ff885d6a446369cf73a4430f75af22be55
+[step] checkout HEAD matches pinned commit: PASS
+
+[step] search: N-1 post-quantum algorithm names (ML-DSA/Dilithium/SLH-DSA/SPHINCS/ML-KEM/Kyber/FIPS 204/FIPS 205/CRYSTALS)
+  scope: /home/hatch/workspace/postfiatd-pin-0085a1f/src /home/hatch/workspace/postfiatd-pin-0085a1f/include
+  pattern: ML-DSA|Dilithium|SLH-DSA|SPHINCS|ML-KEM|Kyber|FIPS 204|FIPS 205|CRYSTALS
+  hits: 0
+  result: N-1 post-quantum algorithm names (ML-DSA/Dilithium/SLH-DSA/SPHINCS/ML-KEM/Kyber/FIPS 204/FIPS 205/CRYSTALS) -> 0 hits
+
+[step] search: N-2 key-rotation automation (key rotation / rotate key / rekey)
+  scope: /home/hatch/workspace/postfiatd-pin-0085a1f/src /home/hatch/workspace/postfiatd-pin-0085a1f/include
+  pattern: key.?rotation|rotate.?key|rekey
+  hits: 0
+  result: N-2 key-rotation automation (key rotation / rotate key / rekey) -> 0 hits
+
+[step] search: N-3 manifest creation in production code (src/xrpld only)
+  scope: /home/hatch/workspace/postfiatd-pin-0085a1f/src/xrpld (tests excluded)
+  pattern: makeManifest|createManifest|signManifest
+  hits: 0 (makeManifestMessages gossip serialization excluded)
+  result: N-3 manifest creation in production code -> 0 hits
+
+[step] search: N-4 Ed25519 in ValidatorKeys.cpp
+  scope: /home/hatch/workspace/postfiatd-pin-0085a1f/src/xrpld/app/misc/detail/ValidatorKeys.cpp
+  pattern: ed25519
+  hits: 0
+  result: N-4 Ed25519 in ValidatorKeys.cpp -> 0 hits
+
+[step] search: N-5 manifest expiry/renewal scheduling
+  scope: /home/hatch/workspace/postfiatd-pin-0085a1f/src /home/hatch/workspace/postfiatd-pin-0085a1f/include
+  pattern: manifest.*expir|expir.*manifest|renew.*manifest|manifest.*renew|rotate.*manifest|manifest.*rotat
+  hits: 3
+  hit: /home/hatch/workspace/postfiatd-pin-0085a1f/src/test/overlay/manifest_flood_test.cpp:201:            cache.applyManifest(clone(rotation), uncapped) ==
+  hit: /home/hatch/workspace/postfiatd-pin-0085a1f/src/test/overlay/manifest_flood_test.cpp:232:            fresh.applyManifest(clone(rotation), uncapped) ==
+  hit: /home/hatch/workspace/postfiatd-pin-0085a1f/src/xrpld/overlay/detail/PeerImp.cpp:725:    if (manifestDiscard_.expired())
+  result: N-5 manifest expiry/renewal scheduling -> 3 hits
+
+[step] search: N-6 compromise detection for validator keys
+  scope: /home/hatch/workspace/postfiatd-pin-0085a1f/src /home/hatch/workspace/postfiatd-pin-0085a1f/include
+  pattern: compromised.*key|key.*compromis|detect.*compromis|revocation.*detect
+  hits: 2
+  hit: /home/hatch/workspace/postfiatd-pin-0085a1f/src/xrpld/app/misc/Manifest.h:40:    Suppose the secret keys installed on a Ripple validator are compromised. Not
+  hit: /home/hatch/workspace/postfiatd-pin-0085a1f/src/xrpld/app/misc/Manifest.h:66:    When an ephemeral key is compromised, a new signing key pair is created,
+  result: N-6 compromise detection for validator keys -> 2 hits
+
+=== summary (derived from the hit counts logged above) ===
+  N-1 post-quantum algorithm names (ML-DSA/Dilithium/SLH-DSA/SPHINCS/ML-KEM/Kyber/FIPS 204/FIPS 205/CRYSTALS) -> 0 hits
+  N-2 key-rotation automation (key rotation / rotate key / rekey) -> 0 hits
+  N-3 manifest creation in production code -> 0 hits
+  N-4 Ed25519 in ValidatorKeys.cpp -> 0 hits
+  N-5 manifest expiry/renewal scheduling -> 3 hits
+  N-6 compromise detection for validator keys -> 2 hits
+NEGATIVE SEARCH OK

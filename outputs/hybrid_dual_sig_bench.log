@@ -1,0 +1,96 @@
+=== hybrid dual-signature benchmark ===
+date_utc: 2026-11-26T02:24:54Z
+liboqs: 0.14.0 (commit 94b421ebb82405c843dba4e9aa521a56ee5a333d)
+classical half: Ed25519 via OpenSSL EVP
+manifest: fixed 225-byte validator-manifest payload
+threads: 1
+verify_budget_sec: 5
+sign_budget_sec: 5 (capped at 50 sign iterations per hybrid)
+
+liboqs_version: 0.14.0
+manifest_bytes: 225
+message: fixed 225-byte validator-manifest payload (repeating pattern)
+threads: 1
+step: Ed25519 keypair generated (OpenSSL EVP)
+--- hybrid: Ed25519 + ML-DSA-44 ---
+liboqs_algorithm_name: ML-DSA-44
+step: post-quantum algorithm object created
+pq_length_public_key: 1312
+pq_length_secret_key: 2560
+pq_length_signature: 2420
+step: post-quantum keypair generated
+ed25519_signature_len: 64
+hybrid_signature_len: 2484
+hybrid_public_key_len: 1344
+step: hybrid envelope size computed (classical + pq, no framing)
+step: both halves signed
+control C-1 valid hybrid signature verifies:
+  step: classical (Ed25519) half verify: PASS
+  step: post-quantum (ML-DSA-44) half verify: PASS
+control C-1: PASS
+control C-2 tampered classical half rejected:
+  step: classical (Ed25519) half verify: FAIL
+control C-2: PASS
+control C-3 tampered post-quantum half rejected:
+  step: classical (Ed25519) half verify: PASS
+  step: post-quantum (ML-DSA-44) half verify: FAIL
+control C-3: PASS
+control C-4 stripped post-quantum half (downgrade) rejected:
+  step: hybrid length check FAIL (got 64, want 2484)
+control C-4: PASS
+control C-5 stripped classical half rejected:
+  step: hybrid length check FAIL (got 2420, want 2484)
+control C-5: PASS
+step: controls passed (valid verifies; tamper and strip reject)
+hybrid_verify_ops: 22202
+hybrid_verify_seconds: 5.000171
+hybrid_verify_ops_per_sec: 4440.248
+hybrid_verify_usec_per_op: 225.213
+hybrid_sign_ops: 50
+hybrid_sign_seconds: 0.007028
+hybrid_sign_ops_per_sec: 7113.913
+hybrid_sign_usec_per_op: 140.570
+hybrid_sign_note: iteration cap of 50 reached; rate is a lower bound
+result: OK
+
+--- hybrid: Ed25519 + SLH-DSA-SHA2-128f ---
+liboqs_algorithm_name: SPHINCS+-SHA2-128f-simple
+step: post-quantum algorithm object created
+pq_length_public_key: 32
+pq_length_secret_key: 64
+pq_length_signature: 17088
+step: post-quantum keypair generated
+ed25519_signature_len: 64
+hybrid_signature_len: 17152
+hybrid_public_key_len: 64
+step: hybrid envelope size computed (classical + pq, no framing)
+step: both halves signed
+control C-1 valid hybrid signature verifies:
+  step: classical (Ed25519) half verify: PASS
+  step: post-quantum (SLH-DSA-SHA2-128f) half verify: PASS
+control C-1: PASS
+control C-2 tampered classical half rejected:
+  step: classical (Ed25519) half verify: FAIL
+control C-2: PASS
+control C-3 tampered post-quantum half rejected:
+  step: classical (Ed25519) half verify: PASS
+  step: post-quantum (SLH-DSA-SHA2-128f) half verify: FAIL
+control C-3: PASS
+control C-4 stripped post-quantum half (downgrade) rejected:
+  step: hybrid length check FAIL (got 64, want 17152)
+control C-4: PASS
+control C-5 stripped classical half rejected:
+  step: hybrid length check FAIL (got 17088, want 17152)
+control C-5: PASS
+step: controls passed (valid verifies; tamper and strip reject)
+hybrid_verify_ops: 3814
+hybrid_verify_seconds: 5.000901
+hybrid_verify_ops_per_sec: 762.663
+hybrid_verify_usec_per_op: 1311.196
+hybrid_sign_ops: 50
+hybrid_sign_seconds: 0.716574
+hybrid_sign_ops_per_sec: 69.776
+hybrid_sign_usec_per_op: 14331.474
+hybrid_sign_note: iteration cap of 50 reached; rate is a lower bound
+result: OK
+result: OK

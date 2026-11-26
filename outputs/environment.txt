@@ -1,0 +1,11 @@
+machine: AMD EPYC 9D25 126-Core Processor
+cpus: 4
+memory: 7934 MB total
+os: "Ubuntu 24.04.5 LTS"
+openssl: OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+compiler: cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+liboqs: 0.14.0 commit 94b421ebb82405c843dba4e9aa521a56ee5a333d
+liboqs build: liboqs 0.14.0 (see harness/run_benchmarks.sh for source resolution)
+postfiatd pin: 0085a1ff885d6a446369cf73a4430f75af22be55 (2026-10-10, version 1.0.9)
+threads: single thread for all benchmarks
+date_utc: 2026-11-26T02:25:57Z

@@ -1,0 +1,247 @@
+== measurement structure check ==
+[step] benchmark-pq block present: ML-DSA-44: PASS
+[step] ML-DSA-44 signature length 2420 B: PASS
+[step] ML-DSA-44 public-key length 1312 B: PASS
+[step] benchmark-pq block present: ML-DSA-65: PASS
+[step] ML-DSA-65 signature length 3309 B: PASS
+[step] ML-DSA-65 public-key length 1952 B: PASS
+[step] benchmark-pq block present: ML-DSA-87: PASS
+[step] ML-DSA-87 signature length 4627 B: PASS
+[step] ML-DSA-87 public-key length 2592 B: PASS
+[step] benchmark-pq block present: SPHINCS+-SHA2-128s-simple: PASS
+[step] SPHINCS+-SHA2-128s-simple signature length 7856 B: PASS
+[step] SPHINCS+-SHA2-128s-simple public-key length 32 B: PASS
+[step] benchmark-pq block present: SPHINCS+-SHA2-128f-simple: PASS
+[step] SPHINCS+-SHA2-128f-simple signature length 17088 B: PASS
+[step] SPHINCS+-SHA2-128f-simple public-key length 32 B: PASS
+[step] benchmark-pq controls: valid verifies (7 blocks): PASS
+[step] benchmark-pq controls: tampered rejects (7 blocks): PASS
+[step] benchmark-pq 225-byte payload block present: PASS
+[step] benchmark-pq 225-byte SLH-DSA block present: PASS
+[step] dual-sig envelope 2484 B (64 Ed25519 + 2420 ML-DSA-44): PASS
+[step] dual-sig envelope 17152 B (64 Ed25519 + 17088 SLH-DSA-128f): PASS
+[step] dual-sig control C-1 PASS (both hybrids): PASS
+[step] dual-sig control C-2 PASS (both hybrids): PASS
+[step] dual-sig control C-3 PASS (both hybrids): PASS
+[step] dual-sig control C-4 PASS (both hybrids): PASS
+[step] dual-sig control C-5 PASS (both hybrids): PASS
+[step] dual-sig verify rate present: PASS
+[step] benchmark-classical Ed25519 sign/verify rates present: PASS
+[step] benchmark-classical P-256 ECDSA section present: PASS
+[step] FIPS 205 name probe: SLH-DSA-SHA2-128s not registered: PASS
+[step] live inventory: 25 validators: PASS
+[step] live inventory: VL sequence 31: PASS
+[step] validator 1: master key Ed25519: PASS
+[step] validator 1: signing key secp256k1: PASS
+[step] validator 1: sequence >= 1: PASS
+[step] validator 1: field table sums to manifest bytes: PASS
+[step] validator 1: master signature 64 B: PASS
+[step] validator 1: ephemeral DER signature 70-71 B: PASS
+[step] validator 2: master key Ed25519: PASS
+[step] validator 2: signing key secp256k1: PASS
+[step] validator 2: sequence >= 1: PASS
+[step] validator 2: field table sums to manifest bytes: PASS
+[step] validator 2: master signature 64 B: PASS
+[step] validator 2: ephemeral DER signature 70-71 B: PASS
+[step] validator 3: master key Ed25519: PASS
+[step] validator 3: signing key secp256k1: PASS
+[step] validator 3: sequence >= 1: PASS
+[step] validator 3: field table sums to manifest bytes: PASS
+[step] validator 3: master signature 64 B: PASS
+[step] validator 3: ephemeral DER signature 70-71 B: PASS
+[step] validator 4: master key Ed25519: PASS
+[step] validator 4: signing key secp256k1: PASS
+[step] validator 4: sequence >= 1: PASS
+[step] validator 4: field table sums to manifest bytes: PASS
+[step] validator 4: master signature 64 B: PASS
+[step] validator 4: ephemeral DER signature 70-71 B: PASS
+[step] validator 5: master key Ed25519: PASS
+[step] validator 5: signing key secp256k1: PASS
+[step] validator 5: sequence >= 1: PASS
+[step] validator 5: field table sums to manifest bytes: PASS
+[step] validator 5: master signature 64 B: PASS
+[step] validator 5: ephemeral DER signature 70-71 B: PASS
+[step] validator 6: master key Ed25519: PASS
+[step] validator 6: signing key secp256k1: PASS
+[step] validator 6: sequence >= 1: PASS
+[step] validator 6: field table sums to manifest bytes: PASS
+[step] validator 6: master signature 64 B: PASS
+[step] validator 6: ephemeral DER signature 70-71 B: PASS
+[step] validator 7: master key Ed25519: PASS
+[step] validator 7: signing key secp256k1: PASS
+[step] validator 7: sequence >= 1: PASS
+[step] validator 7: field table sums to manifest bytes: PASS
+[step] validator 7: master signature 64 B: PASS
+[step] validator 7: ephemeral DER signature 70-71 B: PASS
+[step] validator 8: master key Ed25519: PASS
+[step] validator 8: signing key secp256k1: PASS
+[step] validator 8: sequence >= 1: PASS
+[step] validator 8: field table sums to manifest bytes: PASS
+[step] validator 8: master signature 64 B: PASS
+[step] validator 8: ephemeral DER signature 70-71 B: PASS
+[step] validator 9: master key Ed25519: PASS
+[step] validator 9: signing key secp256k1: PASS
+[step] validator 9: sequence >= 1: PASS
+[step] validator 9: field table sums to manifest bytes: PASS
+[step] validator 9: master signature 64 B: PASS
+[step] validator 9: ephemeral DER signature 70-71 B: PASS
+[step] validator 10: master key Ed25519: PASS
+[step] validator 10: signing key secp256k1: PASS
+[step] validator 10: sequence >= 1: PASS
+[step] validator 10: field table sums to manifest bytes: PASS
+[step] validator 10: master signature 64 B: PASS
+[step] validator 10: ephemeral DER signature 70-71 B: PASS
+[step] validator 11: master key Ed25519: PASS
+[step] validator 11: signing key secp256k1: PASS
+[step] validator 11: sequence >= 1: PASS
+[step] validator 11: field table sums to manifest bytes: PASS
+[step] validator 11: master signature 64 B: PASS
+[step] validator 11: ephemeral DER signature 70-71 B: PASS
+[step] validator 12: master key Ed25519: PASS
+[step] validator 12: signing key secp256k1: PASS
+[step] validator 12: sequence >= 1: PASS
+[step] validator 12: field table sums to manifest bytes: PASS
+[step] validator 12: master signature 64 B: PASS
+[step] validator 12: ephemeral DER signature 70-71 B: PASS
+[step] validator 13: master key Ed25519: PASS
+[step] validator 13: signing key secp256k1: PASS
+[step] validator 13: sequence >= 1: PASS
+[step] validator 13: field table sums to manifest bytes: PASS
+[step] validator 13: master signature 64 B: PASS
+[step] validator 13: ephemeral DER signature 70-71 B: PASS
+[step] validator 14: master key Ed25519: PASS
+[step] validator 14: signing key secp256k1: PASS
+[step] validator 14: sequence >= 1: PASS
+[step] validator 14: field table sums to manifest bytes: PASS
+[step] validator 14: master signature 64 B: PASS
+[step] validator 14: ephemeral DER signature 70-71 B: PASS
+[step] validator 15: master key Ed25519: PASS
+[step] validator 15: signing key secp256k1: PASS
+[step] validator 15: sequence >= 1: PASS
+[step] validator 15: field table sums to manifest bytes: PASS
+[step] validator 15: master signature 64 B: PASS
+[step] validator 15: ephemeral DER signature 70-71 B: PASS
+[step] validator 16: master key Ed25519: PASS
+[step] validator 16: signing key secp256k1: PASS
+[step] validator 16: sequence >= 1: PASS
+[step] validator 16: field table sums to manifest bytes: PASS
+[step] validator 16: master signature 64 B: PASS
+[step] validator 16: ephemeral DER signature 70-71 B: PASS
+[step] validator 17: master key Ed25519: PASS
+[step] validator 17: signing key secp256k1: PASS
+[step] validator 17: sequence >= 1: PASS
+[step] validator 17: field table sums to manifest bytes: PASS
+[step] validator 17: master signature 64 B: PASS
+[step] validator 17: ephemeral DER signature 70-71 B: PASS
+[step] validator 18: master key Ed25519: PASS
+[step] validator 18: signing key secp256k1: PASS
+[step] validator 18: sequence >= 1: PASS
+[step] validator 18: field table sums to manifest bytes: PASS
+[step] validator 18: master signature 64 B: PASS
+[step] validator 18: ephemeral DER signature 70-71 B: PASS
+[step] validator 19: master key Ed25519: PASS
+[step] validator 19: signing key secp256k1: PASS
+[step] validator 19: sequence >= 1: PASS
+[step] validator 19: field table sums to manifest bytes: PASS
+[step] validator 19: master signature 64 B: PASS
+[step] validator 19: ephemeral DER signature 70-71 B: PASS
+[step] validator 20: master key Ed25519: PASS
+[step] validator 20: signing key secp256k1: PASS
+[step] validator 20: sequence >= 1: PASS
+[step] validator 20: field table sums to manifest bytes: PASS
+[step] validator 20: master signature 64 B: PASS
+[step] validator 20: ephemeral DER signature 70-71 B: PASS
+[step] validator 21: master key Ed25519: PASS
+[step] validator 21: signing key secp256k1: PASS
+[step] validator 21: sequence >= 1: PASS
+[step] validator 21: field table sums to manifest bytes: PASS
+[step] validator 21: master signature 64 B: PASS
+[step] validator 21: ephemeral DER signature 70-71 B: PASS
+[step] validator 22: master key Ed25519: PASS
+[step] validator 22: signing key secp256k1: PASS
+[step] validator 22: sequence >= 1: PASS
+[step] validator 22: field table sums to manifest bytes: PASS
+[step] validator 22: master signature 64 B: PASS
+[step] validator 22: ephemeral DER signature 70-71 B: PASS
+[step] validator 23: master key Ed25519: PASS
+[step] validator 23: signing key secp256k1: PASS
+[step] validator 23: sequence >= 1: PASS
+[step] validator 23: field table sums to manifest bytes: PASS
+[step] validator 23: master signature 64 B: PASS
+[step] validator 23: ephemeral DER signature 70-71 B: PASS
+[step] validator 24: master key Ed25519: PASS
+[step] validator 24: signing key secp256k1: PASS
+[step] validator 24: sequence >= 1: PASS
+[step] validator 24: field table sums to manifest bytes: PASS
+[step] validator 24: master signature 64 B: PASS
+[step] validator 24: ephemeral DER signature 70-71 B: PASS
+[step] validator 25: master key Ed25519: PASS
+[step] validator 25: signing key secp256k1: PASS
+[step] validator 25: sequence >= 1: PASS
+[step] validator 25: field table sums to manifest bytes: PASS
+[step] validator 25: master signature 64 B: PASS
+[step] validator 25: ephemeral DER signature 70-71 B: PASS
+[step] live inventory: 16 of 25 validators rotated (seq > 1): PASS
+[step] size model: current variant reproduces measured mean within 1 B: PASS
+[step] size model: pq_both_ML-DSA-44 arithmetic 7502 B: PASS
+[step] size model: pq_both_ML-DSA-44 ratio consistent: PASS
+[step] size model: pq_both_ML-DSA-65 arithmetic 10560 B: PASS
+[step] size model: pq_both_ML-DSA-65 ratio consistent: PASS
+[step] size model: pq_both_ML-DSA-87 arithmetic 14476 B: PASS
+[step] size model: pq_both_ML-DSA-87 ratio consistent: PASS
+[step] size model: pq_both_SLH-DSA-128s arithmetic 15812 B: PASS
+[step] size model: pq_both_SLH-DSA-128s ratio consistent: PASS
+[step] size model: pq_both_SLH-DSA-128f arithmetic 34278 B: PASS
+[step] size model: pq_both_SLH-DSA-128f ratio consistent: PASS
+[step] size model: hybrid dual ML-DSA-44 arithmetic 7710 B: PASS
+[step] size model: hybrid dual ratio consistent: PASS
+CHECK OK
+== excerpt check (internal consistency) ==
+[step] pin field present (40-char SHA): PASS
+[step] 16 excerpts internally consistent: PASS
+CHECK OK (internal consistency; re-run with --pin to verify against a checkout)
+== digest verification ==
+./.github/workflows/ci.yml: OK
+./.gitignore: OK
+./README.md: OK
+./data/key_inventory.json: OK
+./data/manifest_size_model.json: OK
+./data/risk_register.json: OK
+./data/roadmap.json: OK
+./data/scorecard.json: OK
+./data/source_excerpts.json: OK
+./docs/CLAIMS.md: OK
+./docs/FAILURE_MODES.md: OK
+./docs/KEY_INVENTORY.md: OK
+./docs/KEY_LIFECYCLE.md: OK
+./docs/MANIFEST_FORMAT.md: OK
+./docs/PQ_MIGRATION.md: OK
+./docs/REMEDIATION.md: OK
+./docs/REPRODUCTION.md: OK
+./docs/RISK_REGISTER.md: OK
+./docs/ROADMAP.md: OK
+./docs/SCORECARD.md: OK
+./docs/SOURCES.md: OK
+./harness/bench_sig.c: OK
+./harness/classical_speed.sh: OK
+./harness/environment.sh: OK
+./harness/hybrid_bench.c: OK
+./harness/run_benchmarks.sh: OK
+./outputs/benchmark-classical.log: OK
+./outputs/benchmark-pq.log: OK
+./outputs/environment.txt: OK
+./outputs/hybrid_dual_sig_bench.log: OK
+./outputs/live_manifest_probe.log: OK
+./outputs/live_manifest_raw.json: OK
+./outputs/live_vl_raw.json: OK
+./outputs/negative_fips205_names.log: OK
+./outputs/negative_search.log: OK
+./reproduce.sh: OK
+./scripts/check_excerpts.py: OK
+./scripts/check_measurements.py: OK
+./scripts/live_manifest_probe.py: OK
+./scripts/manifest_size_model.py: OK
+./scripts/negative_search.sh: OK
+./scripts/parse_manifest.py: OK
+./verify_digests.sh: OK
+REPRODUCE OK

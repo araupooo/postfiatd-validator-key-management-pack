@@ -1,0 +1,87 @@
+classical baseline: openssl speed (OpenSSL 3.0.13)
+command: timeout 60 openssl speed -elapsed -seconds 2 ed25519
+You have chosen to measure elapsed time instead of user CPU time.
+Doing 253 bits sign Ed25519's for 2s: 37358 253 bits Ed25519 signs in 2.00s 
+Doing 253 bits verify Ed25519's for 2s: 13568 253 bits Ed25519 verify in 2.00s
+version: 3.0.13
+built on: Wed Sep 16 18:47:02 2026 UTC
+options: bn(64,64)
+compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -fzero-call-used-regs=used-gpr -DOPENSSL_TLS_SECURITY_LEVEL=2 -Wa,--noexecstack -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/openssl-yMWwKu/openssl-3.0.13=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/openssl-yMWwKu/openssl-3.0.13=/usr/src/openssl-3.0.13-0ubuntu3.16 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=3
+CPUINFO: OPENSSL_ia32cap=0xfffa3203078bffff:0x18415fdef1bb07ab
+                              sign    verify    sign/s verify/s
+ 253 bits EdDSA (Ed25519)   0.0001s   0.0001s  18679.0   6784.0
+command: timeout 170 openssl speed -elapsed -seconds 2 ecdsa
+You have chosen to measure elapsed time instead of user CPU time.
+Doing 160 bits sign ecdsa's for 2s: 7243 160 bits ECDSA signs in 2.00s
+Doing 160 bits verify ecdsa's for 2s: 7044 160 bits ECDSA verify in 2.00s
+Doing 192 bits sign ecdsa's for 2s: 5854 192 bits ECDSA signs in 2.00s
+Doing 192 bits verify ecdsa's for 2s: 6348 192 bits ECDSA verify in 2.00s
+Doing 224 bits sign ecdsa's for 2s: 27581 224 bits ECDSA signs in 2.00s
+Doing 224 bits verify ecdsa's for 2s: 11495 224 bits ECDSA verify in 2.00s
+Doing 256 bits sign ecdsa's for 2s: 58723 256 bits ECDSA signs in 2.00s
+Doing 256 bits verify ecdsa's for 2s: 21115 256 bits ECDSA verify in 2.00s
+Doing 384 bits sign ecdsa's for 2s: 1562 384 bits ECDSA signs in 2.00s
+Doing 384 bits verify ecdsa's for 2s: 1850 384 bits ECDSA verify in 2.00s
+Doing 521 bits sign ecdsa's for 2s: 4928 521 bits ECDSA signs in 2.00s
+Doing 521 bits verify ecdsa's for 2s: 2514 521 bits ECDSA verify in 2.00s
+Doing 163 bits sign ecdsa's for 2s: 7113 163 bits ECDSA signs in 2.00s
+Doing 163 bits verify ecdsa's for 2s: 3542 163 bits ECDSA verify in 2.00s
+Doing 233 bits sign ecdsa's for 2s: 5189 233 bits ECDSA signs in 2.00s
+Doing 233 bits verify ecdsa's for 2s: 2763 233 bits ECDSA verify in 2.00s
+Doing 283 bits sign ecdsa's for 2s: 3192 283 bits ECDSA signs in 2.00s
+Doing 283 bits verify ecdsa's for 2s: 1597 283 bits ECDSA verify in 2.00s
+Doing 409 bits sign ecdsa's for 2s: 1795 409 bits ECDSA signs in 2.00s
+Doing 409 bits verify ecdsa's for 2s: 893 409 bits ECDSA verify in 2.00s
+Doing 571 bits sign ecdsa's for 2s: 678 571 bits ECDSA signs in 2.00s
+Doing 571 bits verify ecdsa's for 2s: 341 571 bits ECDSA verify in 2.01s
+Doing 163 bits sign ecdsa's for 2s: 5426 163 bits ECDSA signs in 2.03s
+Doing 163 bits verify ecdsa's for 2s: 1918 163 bits ECDSA verify in 2.00s
+Doing 233 bits sign ecdsa's for 2s: 2369 233 bits ECDSA signs in 2.00s
+Doing 233 bits verify ecdsa's for 2s: 1055 233 bits ECDSA verify in 2.00s
+Doing 283 bits sign ecdsa's for 2s: 1129 283 bits ECDSA signs in 2.00s
+Doing 283 bits verify ecdsa's for 2s: 1249 283 bits ECDSA verify in 2.00s
+Doing 409 bits sign ecdsa's for 2s: 1381 409 bits ECDSA signs in 2.00s
+Doing 409 bits verify ecdsa's for 2s: 611 409 bits ECDSA verify in 2.00s
+Doing 571 bits sign ecdsa's for 2s: 467 571 bits ECDSA signs in 2.00s
+Doing 571 bits verify ecdsa's for 2s: 196 571 bits ECDSA verify in 2.01s
+Doing 256 bits sign ecdsa's for 2s: 1891 256 bits ECDSA signs in 2.00s
+Doing 256 bits verify ecdsa's for 2s: 2353 256 bits ECDSA verify in 2.00s
+Doing 256 bits sign ecdsa's for 2s: 1874 256 bits ECDSA signs in 2.00s
+Doing 256 bits verify ecdsa's for 2s: 2100 256 bits ECDSA verify in 2.00s
+Doing 384 bits sign ecdsa's for 2s: 758 384 bits ECDSA signs in 2.00s
+Doing 384 bits verify ecdsa's for 2s: 803 384 bits ECDSA verify in 2.00s
+Doing 384 bits sign ecdsa's for 2s: 612 384 bits ECDSA signs in 2.00s
+Doing 384 bits verify ecdsa's for 2s: 810 384 bits ECDSA verify in 2.00s
+Doing 512 bits sign ecdsa's for 2s: 423 512 bits ECDSA signs in 2.00s
+Doing 512 bits verify ecdsa's for 2s: 494 512 bits ECDSA verify in 2.01s
+Doing 512 bits sign ecdsa's for 2s: 417 512 bits ECDSA signs in 2.00s
+Doing 512 bits verify ecdsa's for 2s: 606 512 bits ECDSA verify in 2.01s
+version: 3.0.13
+built on: Wed Sep 16 18:47:02 2026 UTC
+options: bn(64,64)
+compiler: gcc -fPIC -pthread -m64 -Wa,--noexecstack -Wall -fzero-call-used-regs=used-gpr -DOPENSSL_TLS_SECURITY_LEVEL=2 -Wa,--noexecstack -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/build/openssl-yMWwKu/openssl-3.0.13=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/build/openssl-yMWwKu/openssl-3.0.13=/usr/src/openssl-3.0.13-0ubuntu3.16 -DOPENSSL_USE_NODELETE -DL_ENDIAN -DOPENSSL_PIC -DOPENSSL_BUILDING_OPENSSL -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=3
+CPUINFO: OPENSSL_ia32cap=0xfffa3203078bffff:0x18415fdef1bb07ab
+                              sign    verify    sign/s verify/s
+ 160 bits ecdsa (secp160r1)   0.0003s   0.0003s   3621.5   3522.0
+ 192 bits ecdsa (nistp192)   0.0003s   0.0003s   2927.0   3174.0
+ 224 bits ecdsa (nistp224)   0.0001s   0.0002s  13790.5   5747.5
+ 256 bits ecdsa (nistp256)   0.0000s   0.0001s  29361.5  10557.5
+ 384 bits ecdsa (nistp384)   0.0013s   0.0011s    781.0    925.0
+ 521 bits ecdsa (nistp521)   0.0004s   0.0008s   2464.0   1257.0
+ 163 bits ecdsa (nistk163)   0.0003s   0.0006s   3556.5   1771.0
+ 233 bits ecdsa (nistk233)   0.0004s   0.0007s   2594.5   1381.5
+ 283 bits ecdsa (nistk283)   0.0006s   0.0013s   1596.0    798.5
+ 409 bits ecdsa (nistk409)   0.0011s   0.0022s    897.5    446.5
+ 571 bits ecdsa (nistk571)   0.0029s   0.0059s    339.0    169.7
+ 163 bits ecdsa (nistb163)   0.0004s   0.0010s   2672.9    959.0
+ 233 bits ecdsa (nistb233)   0.0008s   0.0019s   1184.5    527.5
+ 283 bits ecdsa (nistb283)   0.0018s   0.0016s    564.5    624.5
+ 409 bits ecdsa (nistb409)   0.0014s   0.0033s    690.5    305.5
+ 571 bits ecdsa (nistb571)   0.0043s   0.0103s    233.5     97.5
+ 256 bits ecdsa (brainpoolP256r1)   0.0011s   0.0008s    945.5   1176.5
+ 256 bits ecdsa (brainpoolP256t1)   0.0011s   0.0010s    937.0   1050.0
+ 384 bits ecdsa (brainpoolP384r1)   0.0026s   0.0025s    379.0    401.5
+ 384 bits ecdsa (brainpoolP384t1)   0.0033s   0.0025s    306.0    405.0
+ 512 bits ecdsa (brainpoolP512r1)   0.0047s   0.0041s    211.5    245.8
+ 512 bits ecdsa (brainpoolP512t1)   0.0048s   0.0033s    208.5    301.5
+note: P-256 ECDSA above is the classical-ECDSA proxy for secp256k1 (see header); Ed25519 is measured directly

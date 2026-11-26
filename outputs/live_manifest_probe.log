@@ -1,0 +1,217 @@
+[step] fetching validator list from https://postfiat.org/testnet_vl.json
+[step] VL fetched: 14779 bytes, HTTP 200
+[step] VL saved to outputs/live_vl_raw.json (byte-identical)
+[step] VL format version: 2
+[step] VL publisher master key: ED3F1E0DA736FCF99BE2880A60DBD470715C0E04DD793FB862236B070571FC09E2 (first byte ED = Ed25519)
+[step] VL sequence: 31
+[step] VL expiration: 892052157
+[step] validators listed: 25
+[step] RPC validators: HTTP 403 body='Forbidden'
+[step] RPC peers: HTTP 403 body='Forbidden'
+[step] RPC validator_list_sites: HTTP 403 body='Forbidden'
+[step] validator 1/25: master ED4D4244B734... -> base58 nHBAToXoTH6eZtC1cMJDvjG7eRb7ufZ3GUpeisvNVT4ofruRdVvd
+[step]   RPC manifest HTTP 200
+[step]   manifest: 225 bytes, seq=1, domain='app.w.ai'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=8B, sfMasterSignature=64B
+[step]   field totals sum 225 == input 225: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 2/25: master ED921B111B30... -> base58 nHUT8QPaTEVw7hmQiKr7XTvgzrLMvGPGgv2xfdfLvRYpdyRJt5XE
+[step]   RPC manifest HTTP 200
+[step]   manifest: 238 bytes, seq=1, domain='pft.thedarkmatter.xyz'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=21B, sfMasterSignature=64B
+[step]   field totals sum 238 == input 238: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (03...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 3/25: master ED201FD47A90... -> base58 nHBb2uHHY8V78qWQT3P6ADkFz4pRyEgJpA2pEqmQyTHuxXHccBzM
+[step]   RPC manifest HTTP 200
+[step]   manifest: 240 bytes, seq=1, domain='iopo545454-del.github.io'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=24B, sfMasterSignature=64B
+[step]   field totals sum 240 == input 240: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 4/25: master ED21D2377A78... -> base58 nHBcLEB4S6moQGrhMjJo1jbp58WL5psHY9EMDWNAtdqykUYiA1rF
+[step]   RPC manifest HTTP 200
+[step]   manifest: 229 bytes, seq=5, domain='sendoeth.com'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=12B, sfMasterSignature=64B
+[step]   field totals sum 229 == input 229: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 5/25: master ED50A48CC248... -> base58 nHBxxNuWsJXkzLk332ADxt1T18N1e9BSYjekjGNVCPfV813tSdvx
+[step]   RPC manifest HTTP 200
+[step]   manifest: 240 bytes, seq=1, domain='postfiat.maro.dpdns.org'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=23B, sfMasterSignature=64B
+[step]   field totals sum 240 == input 240: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 6/25: master ED2DB2949D5B... -> base58 nHB6Zc7mhr7swksEgpwTE7Hw7SvZ9cz22T2MECMSXjBeMTeHXQB7
+[step]   RPC manifest HTTP 200
+[step]   manifest: 243 bytes, seq=6, domain='pft.permanentupperclass.com'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=27B, sfMasterSignature=64B
+[step]   field totals sum 243 == input 243: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 7/25: master ED004DBFCC00... -> base58 nHBM2nzq3pZUg8JsxvEt3G7gAAtc5Sukaef6YmvVx64uAoRK4QWM
+[step]   RPC manifest HTTP 200
+[step]   manifest: 232 bytes, seq=6, domain='jollydinger.com'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=15B, sfMasterSignature=64B
+[step]   field totals sum 232 == input 232: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (03...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 8/25: master ED123A54609C... -> base58 nHBVTAUpHEoEctXcAWyC7nJhxUYULWKz1WZCuC1tSm2VnCxDshVS
+[step]   RPC manifest HTTP 200
+[step]   manifest: 228 bytes, seq=4, domain='pftmeech.xyz'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=12B, sfMasterSignature=64B
+[step]   field totals sum 228 == input 228: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 9/25: master ED154DB82401... -> base58 nHBWFVzxVYAVQNUFHoqnHw2SWhXKy1kKRr7oYAMFeu22rqsCLYCN
+[step]   RPC manifest HTTP 200
+[step]   manifest: 237 bytes, seq=13, domain='qwerky2233.github.io'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=20B, sfMasterSignature=64B
+[step]   field totals sum 237 == input 237: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (03...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 10/25: master ED9374294AB2... -> base58 nHU74qX4tCQDSpE6zBS5PB3jybuGZJ7QMbeyLWDQRy3Lhb4DYDSR
+[step]   RPC manifest HTTP 200
+[step]   manifest: 238 bytes, seq=2, domain='validator.pftperry.com'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=22B, sfMasterSignature=64B
+[step]   field totals sum 238 == input 238: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (03...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 11/25: master EDCE5B0D1AA6... -> base58 nHUvKQbxx14GFyMaRB4vgu11x6pXrwMwX9yP5Ltgk4jp4SHbbgWA
+[step]   RPC manifest HTTP 200
+[step]   manifest: 240 bytes, seq=1, domain='hamedminasli.duckdns.org'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=24B, sfMasterSignature=64B
+[step]   field totals sum 240 == input 240: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 12/25: master EDD81DA4510C... -> base58 nHUzc5XzsmweRV6aNyUQJD5eRUM4TT4tVCBv5DKx6T7Buq4gn9Lr
+[step]   RPC manifest HTTP 200
+[step]   manifest: 232 bytes, seq=7, domain='pft.wizbubba.xyz'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=16B, sfMasterSignature=64B
+[step]   field totals sum 232 == input 232: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 13/25: master ED18B80CFF66... -> base58 nHBYKjxjbzxRzrS3XkhpgM7KXJ25jbgPHkbAjjSCQPm8PaPS5y4v
+[step]   RPC manifest HTTP 200
+[step]   manifest: 230 bytes, seq=7, domain='pft.hit0ri.xyz'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=14B, sfMasterSignature=64B
+[step]   field totals sum 230 == input 230: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (03...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 14/25: master ED518DF35FB7... -> base58 nHByMXejvHJgjcGJ1f9bhcAGcFeNR6ecsDmzN4t3HkhyRHZtM6Lj
+[step]   RPC manifest HTTP 200
+[step]   manifest: 236 bytes, seq=5, domain='pft.bigwoodnode.com'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=19B, sfMasterSignature=64B
+[step]   field totals sum 236 == input 236: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 15/25: master EDE79A060F74... -> base58 nHDfSHLutR7QqttAkx3AiYG2bukCdfAa3P9hrYL4yNJZQpvEpW1A
+[step]   RPC manifest HTTP 200
+[step]   manifest: 230 bytes, seq=4, domain='postfiat.live'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=13B, sfMasterSignature=64B
+[step]   field totals sum 230 == input 230: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 16/25: master ED62AA9FB114... -> base58 nHUatddiVB2GN6zHHCk1gtepjANF8BdjPKuVcN6jwG2JwBYPea3k
+[step]   RPC manifest HTTP 200
+[step]   manifest: 237 bytes, seq=1, domain='local-maxi.github.io'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=20B, sfMasterSignature=64B
+[step]   field totals sum 237 == input 237: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 17/25: master EDA76CF43ED1... -> base58 nHUdwzTWTQJzebbxcanZG2ERXikMLU9aAZa8cHtxosfiKq5N7Vd5
+[step]   RPC manifest HTTP 200
+[step]   manifest: 231 bytes, seq=7, domain='pft.whiteguy.eu'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=15B, sfMasterSignature=64B
+[step]   field totals sum 231 == input 231: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (03...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 18/25: master ED6B25E466E4... -> base58 nHUwdHGzvTM93oV38tMPSWZAWQ2Q6hVDS3XLQ32HPTUtcRASpayQ
+[step]   RPC manifest HTTP 200
+[step]   manifest: 229 bytes, seq=1, domain='parshant.com'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=12B, sfMasterSignature=64B
+[step]   field totals sum 229 == input 229: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 19/25: master EDE8F9E784C5... -> base58 nHD3sPmhNtVXTXrZAGhsfHRhxhzFXKHNNxemTtGFr69SRd9q88dZ
+[step]   RPC manifest HTTP 200
+[step]   manifest: 246 bytes, seq=5, domain='snakespartan.pftoligarchy.com'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=29B, sfMasterSignature=64B
+[step]   field totals sum 246 == input 246: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 20/25: master EDEF0DC9039D... -> base58 nHDw5erSdzhtZ7khjHeotRywM6WyPgJp6sUSewscoqLgC6LGATzn
+[step]   RPC manifest HTTP 200
+[step]   manifest: 244 bytes, seq=1, domain='postfiatd.devflows.dedyn.io'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=27B, sfMasterSignature=64B
+[step]   field totals sum 244 == input 244: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 21/25: master ED6F750D3C72... -> base58 nHUUXMXfPEdnKAT8u2AB89LxTWT1tWsTecDPQURoMw2XJ2WP85MK
+[step]   RPC manifest HTTP 200
+[step]   manifest: 230 bytes, seq=2, domain='pft.akirax.xyz'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=14B, sfMasterSignature=64B
+[step]   field totals sum 230 == input 230: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 22/25: master ED213D817FE9... -> base58 nHBcnQZ9a9UjZ7hbj9zWVXZ9kTcqheUkui32YdBTpQeAsE6BxWNG
+[step]   RPC manifest HTTP 200
+[step]   manifest: 227 bytes, seq=5, domain='pft.g.money'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=11B, sfMasterSignature=64B
+[step]   field totals sum 227 == input 227: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (03...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 23/25: master ED988B2907AA... -> base58 nHUWciHX8W9PgM3sQmgkRiKpkuaJjTxFSyvZce4bP4WeMz81HefX
+[step]   RPC manifest HTTP 200
+[step]   manifest: 225 bytes, seq=2, domain='auri0x.io'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=9B, sfMasterSignature=64B
+[step]   field totals sum 225 == input 225: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] validator 24/25: master EDAC24E230EA... -> base58 nHUCEXpC5LhFAm1Mmf8TqrzVGt3QCuwWoW2V8PYynDpjZe8m8mHj
+[step]   RPC manifest HTTP 200
+[step]   manifest: 245 bytes, seq=3, domain='lc66validator.postfiatcn.org'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=71B, sfDomain=28B, sfMasterSignature=64B
+[step]   field totals sum 245 == input 245: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (03...)
+[step]   master signature: 64 B; ephemeral signature: 71 B (DER)
+[step] validator 25/25: master ED372A9FAC2A... -> base58 nHBmj7zUY2yMc9f5wgNcCuWj79BUieNmc1GG8PqiEP1tgNZZWLVM
+[step]   RPC manifest HTTP 200
+[step]   manifest: 233 bytes, seq=1, domain='dex3333.github.io'
+[step]   parsed fields: sfSequence=4B, sfPublicKey=33B, sfSigningPubKey=33B, sfSignature=70B, sfDomain=17B, sfMasterSignature=64B
+[step]   field totals sum 233 == input 233: PASS
+[step]   master key type: Ed25519 (ED...)
+[step]   signing key type: secp256k1 (02...)
+[step]   master signature: 64 B; ephemeral signature: 70 B (DER)
+[step] raw RPC responses saved to outputs/live_manifest_raw.json
+[step] parsed inventory saved to data/key_inventory.json
+[step] sequences observed: [1, 2, 3, 4, 5, 6, 7, 13]
+[step] master key types: ['Ed25519']
+[step] signing key types: ['secp256k1']
+[step] LIVE PROBE OK

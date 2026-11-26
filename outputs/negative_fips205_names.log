@@ -1,0 +1,4 @@
+liboqs_version: 0.14.0
+algorithm: SLH-DSA-SHA2-128s
+message_bytes: 32
+result: ALGORITHM_NOT_ENABLED
