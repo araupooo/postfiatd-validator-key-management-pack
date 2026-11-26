@@ -1,0 +1,6 @@
+# Build artifacts produced by reproduce.sh (never committed).
+harness/bench_sig
+harness/hybrid_bench
+.deps/
+__pycache__/
+*.pyc
