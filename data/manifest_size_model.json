@@ -1,0 +1,113 @@
+{
+  "inventory": {
+    "validators": 25,
+    "vl_sequence": 31,
+    "mean_manifest_bytes": 234.6,
+    "min_manifest_bytes": 225,
+    "max_manifest_bytes": 246,
+    "mean_der_ephemeral_sig_bytes": 70.52,
+    "mean_domain_bytes": 18.08,
+    "fixed_part_bytes": 34.08
+  },
+  "variants": {
+    "current": {
+      "label": "Current: Ed25519 master + secp256k1 ephemeral",
+      "master_pk": 33,
+      "signing_pk": 33,
+      "master_sig": 64,
+      "ephemeral_sig": 70.52,
+      "extra_len_prefix_bytes": 0,
+      "manifest_bytes": 235,
+      "ratio_vs_current": 1.0
+    },
+    "pq_both_ML-DSA-44": {
+      "label": "Full PQ: ML-DSA-44 master + ML-DSA-44 ephemeral",
+      "master_pk": 1312,
+      "signing_pk": 1312,
+      "master_sig": 2420,
+      "ephemeral_sig": 2420,
+      "extra_len_prefix_bytes": 4,
+      "manifest_bytes": 7502,
+      "ratio_vs_current": 31.98
+    },
+    "pq_both_ML-DSA-65": {
+      "label": "Full PQ: ML-DSA-65 master + ML-DSA-65 ephemeral",
+      "master_pk": 1952,
+      "signing_pk": 1952,
+      "master_sig": 3309,
+      "ephemeral_sig": 3309,
+      "extra_len_prefix_bytes": 4,
+      "manifest_bytes": 10560,
+      "ratio_vs_current": 45.01
+    },
+    "pq_both_ML-DSA-87": {
+      "label": "Full PQ: ML-DSA-87 master + ML-DSA-87 ephemeral",
+      "master_pk": 2592,
+      "signing_pk": 2592,
+      "master_sig": 4627,
+      "ephemeral_sig": 4627,
+      "extra_len_prefix_bytes": 4,
+      "manifest_bytes": 14476,
+      "ratio_vs_current": 61.71
+    },
+    "pq_both_SLH-DSA-128s": {
+      "label": "Full PQ: SLH-DSA-128s master + SLH-DSA-128s ephemeral",
+      "master_pk": 32,
+      "signing_pk": 32,
+      "master_sig": 7856,
+      "ephemeral_sig": 7856,
+      "extra_len_prefix_bytes": 2,
+      "manifest_bytes": 15812,
+      "ratio_vs_current": 67.4
+    },
+    "pq_both_SLH-DSA-128f": {
+      "label": "Full PQ: SLH-DSA-128f master + SLH-DSA-128f ephemeral",
+      "master_pk": 32,
+      "signing_pk": 32,
+      "master_sig": 17088,
+      "ephemeral_sig": 17088,
+      "extra_len_prefix_bytes": 4,
+      "manifest_bytes": 34278,
+      "ratio_vs_current": 146.11
+    },
+    "hybrid_dual_mldsa44": {
+      "label": "Hybrid dual Ed25519+ML-DSA-44 (PFQS v1 envelope, both signatures)",
+      "master_pk": 1344,
+      "signing_pk": 1344,
+      "master_sig": 2492,
+      "ephemeral_sig": 2492,
+      "extra_len_prefix_bytes": 4,
+      "manifest_bytes": 7710,
+      "ratio_vs_current": 32.86
+    },
+    "hybrid_master_only_mldsa44": {
+      "label": "Staged: ML-DSA-44 master only, secp256k1 ephemeral",
+      "master_pk": 1312,
+      "signing_pk": 33,
+      "master_sig": 2420,
+      "ephemeral_sig": 70.52,
+      "extra_len_prefix_bytes": 2,
+      "manifest_bytes": 3872,
+      "ratio_vs_current": 16.5
+    },
+    "hybrid_ephemeral_only_mldsa44": {
+      "label": "Staged: Ed25519 master, ML-DSA-44 ephemeral only",
+      "master_pk": 33,
+      "signing_pk": 1312,
+      "master_sig": 64,
+      "ephemeral_sig": 2420,
+      "extra_len_prefix_bytes": 2,
+      "manifest_bytes": 3865,
+      "ratio_vs_current": 16.47
+    }
+  },
+  "gossip_impact": {
+    "validators": 25,
+    "current_25_manifests_bytes": 5865,
+    "mldsa44_25_manifests_bytes": 187550,
+    "slh128f_25_manifests_bytes": 856950,
+    "untrusted_cap_manifests": 1000,
+    "current_1000_manifests_bytes": 234600,
+    "mldsa44_1000_manifests_bytes": 7502000
+  }
+}

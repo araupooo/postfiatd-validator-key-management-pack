@@ -1,0 +1,158 @@
+{
+  "pack": "Postfiatd Validator Key-Management Evidence Pack",
+  "pin": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "ranking_rule": "Rank = severity first, then exploitability (High > Medium > Low). Severity judges the harm if the weakness is used; exploitability judges how easily and reliably an attacker can trigger it.",
+  "counts": {
+    "HIGH": 3,
+    "MEDIUM": 6,
+    "LOW": 6,
+    "INFO": 1,
+    "total": 16
+  },
+  "findings": [
+    {
+      "id": "K-01",
+      "rank": 1,
+      "severity": "HIGH",
+      "exploitability": "High",
+      "title": "Validation keys are secp256k1-only, hardcoded in three places",
+      "description": "src/xrpld/app/misc/detail/ValidatorKeys.cpp:47 (token path: derivePublicKey(KeyType::secp256k1, token->validationSecret)); :84-85 (seed path: generateSecretKey/derivePublicKey secp256k1); src/xrpld/rpc/handlers/ValidationCreate.cpp:54,58 (validation_create generates secp256k1 only). No Ed25519 option exists for the signing key even though KeyType supports it; a PQ migration needs a code change, not a config change.",
+      "source_ref": "ValidatorKeys.cpp:47,84-85; ValidationCreate.cpp:54,58"
+    },
+    {
+      "id": "K-02",
+      "rank": 2,
+      "severity": "HIGH",
+      "exploitability": "High",
+      "title": "Master-key compromise is terminal: revocation permanently removes the validator",
+      "description": "A compromised master key is revoked with sequence 0xFFFFFFFF (Manifest.cpp:235-241), after which no higher sequence is possible and no signing key is on record, so no validations are accepted (Manifest.h:66-76). Recovery needs a brand-new master key, i.e. a new validator identity plus a validator-list reconfiguration on every node. No recovery path exists in-tree.",
+      "source_ref": "Manifest.h:66-76; Manifest.cpp:235-241"
+    },
+    {
+      "id": "K-03",
+      "rank": 3,
+      "severity": "HIGH",
+      "exploitability": "Medium",
+      "title": "No compromise detection for validator keys anywhere in-tree",
+      "description": "Nothing detects a compromised validator key: the only 'compromised' mentions in src/ + include/ are two prose lines in the Manifest.h doc comment (negative search N-6: 2 hits, both comments). Revocation depends entirely on the operator noticing out-of-band and publishing a revocation manifest.",
+      "source_ref": "outputs/negative_search.log (N-6: 2 hits, both doc prose)"
+    },
+    {
+      "id": "K-04",
+      "rank": 4,
+      "severity": "MEDIUM",
+      "exploitability": "High",
+      "title": "No key-rotation automation: rotation is fully manual",
+      "description": "No rotation scheduler, expiry, or renewal exists (negative search N-2: 0 hits for key rotation/rekey; N-5: 3 hits, two test-helper names and an unrelated discard timer). Rotation means generating a new keypair, signing a new manifest offline, and distributing it. Live: 9 of 25 testnet validators are still on sequence 1 (never rotated).",
+      "source_ref": "outputs/negative_search.log (N-2: 0; N-5: 3 benign); data/key_inventory.json (9/25 seq 1)"
+    },
+    {
+      "id": "K-05",
+      "rank": 5,
+      "severity": "MEDIUM",
+      "exploitability": "Medium",
+      "title": "Manifest creation exists only in tests; production has no minting tool",
+      "description": "makeManifestString (Manifest_test.cpp:106) and makeManifest (:193) are test-only helpers. No production code creates a manifest (negative search N-3: 0 hits in src/xrpld); operators depend on external/offline tooling that is not in this tree and not audited here.",
+      "source_ref": "outputs/negative_search.log (N-3: 0); src/test/app/Manifest_test.cpp:106,193"
+    },
+    {
+      "id": "K-06",
+      "rank": 6,
+      "severity": "MEDIUM",
+      "exploitability": "Medium",
+      "title": "validation_create invites secret leakage via shell history and ps",
+      "description": "The RPC parser itself warns: 'It is poor security to specify secret information on the command line. This information might be saved in the command shell history file (e.g. .bash_history) and it may be leaked via the process status command (i.e. ps).' (RPCCall.cpp:1100-1103). validation_create is the only in-tree key-generation path and it is admin-only (ValidationCreate.cpp:42-43).",
+      "source_ref": "src/xrpld/rpc/detail/RPCCall.cpp:1100-1103"
+    },
+    {
+      "id": "K-07",
+      "rank": 7,
+      "severity": "MEDIUM",
+      "exploitability": "Low",
+      "title": "Manifest version is pinned to 0 with no upgrade path",
+      "description": "Only version-0 manifests are understood (Manifest.cpp:90-93); the template carries a version field that defaults to 0 (Manifest.cpp:72). A post-quantum manifest format needs a version bump, and no negotiation, migration, or dual-version handling is designed anywhere.",
+      "source_ref": "src/xrpld/app/misc/detail/Manifest.cpp:72,90-93"
+    },
+    {
+      "id": "K-08",
+      "rank": 8,
+      "severity": "MEDIUM",
+      "exploitability": "Low",
+      "title": "Untrusted-manifest cache bound (1000) is not size-aware",
+      "description": "The cache keeps up to 1000 unlisted manifests (Manifest.h:283). At current sizes that is ~235 KB; at full ML-DSA-44 it is ~7.5 MB, and a 25-manifest greeting set grows from 5,865 B to 187,550 B. No size-aware admission or eviction exists (eviction is oldest-first by count only, Manifest.cpp:596-601).",
+      "source_ref": "src/xrpld/app/misc/Manifest.h:282-284; data/manifest_size_model.json"
+    },
+    {
+      "id": "K-09",
+      "rank": 9,
+      "severity": "LOW",
+      "exploitability": "Medium",
+      "title": "Mixed key types: Ed25519 master, secp256k1 ephemeral",
+      "description": "Live inventory: 25/25 master keys are Ed25519 (ED prefix) and 25/25 signing keys are secp256k1 (02/03 prefix). Every manifest verification runs two different algorithms (Manifest::verify, Manifest.cpp:196-213). A PQ migration must replace both halves, not one.",
+      "source_ref": "data/key_inventory.json (25/25, 25/25); Manifest.cpp:196-213"
+    },
+    {
+      "id": "K-10",
+      "rank": 10,
+      "severity": "LOW",
+      "exploitability": "Low",
+      "title": "Manifests never expire: no timestamp or expiry field",
+      "description": "The manifest template (Manifest.cpp:59-82) has no expiry or not-valid-after field. A stale manifest stays valid forever until superseded by a higher sequence or revoked; the only staleness rule is sequence comparison (Manifest.cpp:411).",
+      "source_ref": "src/xrpld/app/misc/detail/Manifest.cpp:59-82,411"
+    },
+    {
+      "id": "K-11",
+      "rank": 11,
+      "severity": "LOW",
+      "exploitability": "Low",
+      "title": "Domain is unauthenticated free text",
+      "description": "The optional domain is checked only for being a 'properly formed' TOML domain (Manifest.cpp:109-113); it proves nothing about control of the domain. Live: 25/25 validators publish a domain, including throwaway hosts (github.io, duckdns.org, dpdns.org).",
+      "source_ref": "src/xrpld/app/misc/detail/Manifest.cpp:109-113; data/key_inventory.json"
+    },
+    {
+      "id": "K-12",
+      "rank": 12,
+      "severity": "LOW",
+      "exploitability": "Low",
+      "title": "Public RPC refuses validator-inventory methods",
+      "description": "The public testnet RPC returns HTTP 403 Forbidden for validators, peers, and validator_list_sites, so live oversight cannot use the node: it depends on the publisher VL file (https://postfiat.org/testnet_vl.json). The manifest method itself works.",
+      "source_ref": "outputs/live_manifest_probe.log (3x HTTP 403 Forbidden)"
+    },
+    {
+      "id": "K-13",
+      "rank": 13,
+      "severity": "LOW",
+      "exploitability": "Low",
+      "title": "getSigningKey falls back to the master key when no manifest is known",
+      "description": "ManifestCache::getSigningKey returns the signing key when a non-revoked manifest is known, else the queried key itself (Manifest.cpp:310-320). The offline-master protection is therefore opt-in at the cache API level; the trusted-set path asserts a manifest exists (ValidatorList.cpp:2072-2075), so the fallback does not apply to trusted validators.",
+      "source_ref": "src/xrpld/app/misc/detail/Manifest.cpp:310-320; ValidatorList.cpp:2072-2075"
+    },
+    {
+      "id": "K-14",
+      "rank": 14,
+      "severity": "MEDIUM",
+      "exploitability": "Medium",
+      "title": "Full-PQ manifests are 32-146x current size and cross a length-encoding boundary",
+      "description": "Model from the live inventory (mean manifest 234.6 B): ML-DSA-44 both halves 7,502 B (32.0x), ML-DSA-65 10,560 B (45.0x), ML-DSA-87 14,476 B (61.7x), SLH-DSA-128s 15,812 B (67.4x), SLH-DSA-128f 34,278 B (146.1x). SLH-DSA-128f signatures (17,088 B) exceed the 12,480-byte two-byte VL length limit and need 3-byte length prefixes. Hybrid dual ML-DSA-44 is 7,710 B (32.9x).",
+      "source_ref": "data/manifest_size_model.json"
+    },
+    {
+      "id": "K-15",
+      "rank": 15,
+      "severity": "INFO",
+      "exploitability": "Low",
+      "title": "Live rotation is uneven: 16 of 25 rotated, 9 never rotated",
+      "description": "Sequence distribution across the 25 live testnet validators: seq 1: 9, 2: 3, 3: 1, 4: 2, 5: 4, 6: 2, 7: 3, 13: 1. Maximum observed sequence is 13. No validator publishes a rotation policy, so rotation cadence is unobservable except through sequence numbers.",
+      "source_ref": "data/key_inventory.json"
+    },
+    {
+      "id": "K-16",
+      "rank": 16,
+      "severity": "LOW",
+      "exploitability": "Low",
+      "title": "PQ verification is fast enough; PQ signing is the bottleneck",
+      "description": "Fresh single-thread measurements (liboqs 0.14.0): ML-DSA-44 verify 25,714.1/s vs Ed25519 verify 6,784.0/s (3.8x faster); dual Ed25519+ML-DSA-44 verify 4,440.2/s (0.65x Ed25519). Signing is the constraint: SLH-DSA-128s signs at 3.6/s, SLH-DSA-128f at 70.0/s, ML-DSA-44 at 8,715.6/s. Manifest verification rate is not the migration blocker; manifest size and signing latency are.",
+      "source_ref": "outputs/benchmark-pq.log; outputs/hybrid_dual_sig_bench.log; outputs/benchmark-classical.log"
+    }
+  ]
+}

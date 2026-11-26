@@ -1,0 +1,54 @@
+{
+  "pack": "Postfiatd Validator Key-Management Evidence Pack",
+  "pin": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "scale": "0-5 per dimension (0 = absent; 5 = complete, measured, and operated). Overall is the mean of the five surface scores.",
+  "surfaces": [
+    {
+      "surface": "validator-identity-and-manifests",
+      "score": 3,
+      "measurement": 5,
+      "in_tree_support": 4,
+      "migration_design": 2,
+      "operational_readiness": 2,
+      "rationale": "Manifest format, verification, revocation, and the live inventory are all measured and traced to source; the format is version-locked to 0 with no PQ upgrade path, which caps migration design at 2."
+    },
+    {
+      "surface": "key-generation",
+      "score": 2,
+      "measurement": 4,
+      "in_tree_support": 3,
+      "migration_design": 1,
+      "operational_readiness": 2,
+      "rationale": "Generation exists (validation_create, token/seed config) but is secp256k1-only in three hardcoded places, and the only in-tree path warns about CLI secret leakage."
+    },
+    {
+      "surface": "key-rotation-and-revocation",
+      "score": 1,
+      "measurement": 4,
+      "in_tree_support": 1,
+      "migration_design": 1,
+      "operational_readiness": 1,
+      "rationale": "Rotation and revocation semantics are specified and live rotation is observed (16/25 rotated), but there is no automation, no scheduling, no expiry, and manifest creation exists only in tests."
+    },
+    {
+      "surface": "compromise-detection-and-recovery",
+      "score": 0,
+      "measurement": 3,
+      "in_tree_support": 0,
+      "migration_design": 0,
+      "operational_readiness": 0,
+      "rationale": "No detection machinery exists; recovery from master-key compromise is terminal (new identity + list reconfiguration). Nothing to measure beyond the absence itself."
+    },
+    {
+      "surface": "post-quantum-readiness",
+      "score": 1,
+      "measurement": 5,
+      "in_tree_support": 0,
+      "migration_design": 2,
+      "operational_readiness": 1,
+      "rationale": "PQ rates and manifest-size impacts are freshly measured and modelled, but zero PQ support exists in-tree and the size blow-up (32-146x) has no designed mitigation."
+    }
+  ],
+  "overall": 1.4,
+  "note": "Overall 1.4 = mean of 3, 2, 1, 0, 1."
+}

@@ -1,0 +1,81 @@
+{
+  "pack": "Postfiatd Validator Key-Management Evidence Pack",
+  "pin": "0085a1ff885d6a446369cf73a4430f75af22be55",
+  "stages": [
+    {
+      "stage": "S0",
+      "name": "Stop the bleeding: secret handling + revocation readiness",
+      "fixes": [
+        "K-06: route validation_create through a file/stdin secret path and document it; never accept secrets on the command line",
+        "K-02: publish a tested master-key revocation runbook (revocation manifest + list update) and rehearse it on testnet"
+      ],
+      "exit": "A revocation can be published end-to-end on testnet within one hour of decision, without putting a secret on any command line."
+    },
+    {
+      "stage": "S1",
+      "name": "Make rotation real: tooling + policy",
+      "fixes": [
+        "K-04: ship an in-tree manifest minting/rotation tool (the test helper logic, productized) with sequence management",
+        "K-05: document the rotation procedure and a recommended cadence; publish each validator's rotation policy",
+        "K-15: track sequence numbers per validator and alert on staleness"
+      ],
+      "exit": "Any validator can rotate its ephemeral key with one command; rotation events are visible in the manifest sequence history."
+    },
+    {
+      "stage": "S2",
+      "name": "Detection: notice compromise before it is exploited",
+      "fixes": [
+        "K-03: add manifest/validation anomaly monitoring (unexpected sequence jumps, duplicate ephemeral keys, new master keys)",
+        "K-10: add optional manifest expiry (not-valid-after) so stale manifests die without operator action"
+      ],
+      "exit": "A compromised-key scenario is detected by monitoring, not by an operator happening to notice."
+    },
+    {
+      "stage": "S3",
+      "name": "Post-quantum design: version the format, stage the migration",
+      "fixes": [
+        "K-07: define manifest version 1 with a PQ-capable field layout and a dual-version acceptance window",
+        "K-01: parameterize ValidatorKeys/validation_create over key type instead of hardcoding secp256k1",
+        "K-14: adopt the staged hybrid (master-only ML-DSA-44 first, 3,872 B) before full PQ; set a gossip/cache budget for 7,502 B manifests"
+      ],
+      "exit": "A version-1 manifest verifies on a test build; staged hybrid manifests stay within the gossip budget."
+    },
+    {
+      "stage": "S4",
+      "name": "Migrate and operate",
+      "fixes": [
+        "K-08: make the untrusted-manifest bound size-aware",
+        "K-09: complete the dual-key migration and retire secp256k1-only paths",
+        "K-11/K-12/K-13: authenticate domains where relied upon, publish validator inventory via the node, remove the master-key fallback"
+      ],
+      "exit": "All testnet validators run PQ or hybrid manifests; secp256k1-only validation keys are gone."
+    }
+  ],
+  "open_decisions": [
+    {
+      "id": "D-01",
+      "decision": "Manifest version 1 field layout: which PQ algorithms are permitted per key slot (ML-DSA-44 only, or a small set)",
+      "status": "open"
+    },
+    {
+      "id": "D-02",
+      "decision": "Whether the master key migrates first or the ephemeral key migrates first (this pack recommends master-first: 3,872 B vs 3,865 B is a wash on size; master-first retires the long-lived key sooner)",
+      "status": "open"
+    },
+    {
+      "id": "D-03",
+      "decision": "Gossip/cache budget for PQ manifests: keep 1000 unlisted manifests (7.5 MB at ML-DSA-44) or lower the bound",
+      "status": "open"
+    },
+    {
+      "id": "D-04",
+      "decision": "Manifest expiry length, if any (no expiry exists today; a value must be chosen before K-10 can ship)",
+      "status": "open"
+    },
+    {
+      "id": "D-05",
+      "decision": "Whether validation_create stays admin-only RPC or moves to a dedicated offline tool (the CLI-leak warning pushes toward offline)",
+      "status": "open"
+    }
+  ]
+}
